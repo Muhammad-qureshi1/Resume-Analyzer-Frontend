@@ -20,7 +20,7 @@ if(signupForm){
         // const res = await axios.post("http://localhost:5000/api/signup", {
             name,
             email,
-            password
+            password    
         });
             
         // const data = res.data;
@@ -93,9 +93,16 @@ const formData = new FormData();
     formData.append("resume", resumeFile);
     formData.append("jobDescription", jobDescription); // optional
 
-    const res = await axios.post("http://resume-analyzer-backend-green.vercel.app/api/resume", {
-        resumeFile, jobDescription
-    });
+    // const res = await axios.post("http://resume-analyzer-backend-green.vercel.app/api/resume", {
+    //     resumeFile, jobDescription
+    // });
+const res = await axios.post(
+  "http://resume-analyzer-backend-green.vercel.app/api/resume",
+  formData,
+  { headers: { "Content-Type": "multipart/form-data" } }
+);
+
+document.getElementById("responseBox").innerHTML = res.data.result;
 
     const data = await res.json();
     document.getElementById("responseBox").innerHTML = data.result;
