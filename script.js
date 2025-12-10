@@ -16,7 +16,7 @@ if(signupForm){
                 return alert("Password length must be greater than 6");
             }
         
-        const res = await axios.post("resume-analyzer-backend-green.vercel.app/api/signup", {
+        const res = await axios.post("http://resume-analyzer-backend-green.vercel.app/api/signup", {
         // const res = await axios.post("http://localhost:5000/api/signup", {
             name,
             email,
@@ -51,7 +51,7 @@ try {
 let email = document.getElementById("loginEmail").value;
 let  password = document.getElementById("loginPassword").value;
 
-    const res =  await axios.post("resume-analyzer-backend-green.vercel.app/api/login", {
+    const res =  await axios.post("http://resume-analyzer-backend-green.vercel.app/api/login", {
     // const res =  await axios.post("http://localhost:5000/api/login", {
            email,
            password
@@ -93,7 +93,7 @@ const formData = new FormData();
     formData.append("resume", resumeFile);
     formData.append("jobDescription", jobDescription); // optional
 
-    const res = await axios.post("resume-analyzer-backend-green.vercel.app/api/resume", {
+    const res = await axios.post("http://resume-analyzer-backend-green.vercel.app/api/resume", {
         resumeFile, jobDescription
     });
 
