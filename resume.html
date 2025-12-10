@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Powered Resume Analyzer And Job Tracker</title>
+<link rel="stylesheet" href="style.css">
+<!-- axios cdn link -->
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Gemini Integration.</h1>
+<div class="resume">
+    <!-- <form id="resumeAnalyze"> -->
+<div class="pdf"><span>Upload resume</span><input type="file" accept="application/pdf" id="resume"></div>
+    <div class="description"><textarea placeholder="Paste Job description ( Optional )" id="jobDescription"></textarea></div>
+</div>
+<!-- <button type="submit" id="resumeAnalyze" onclick="resumeAnalyze()">Analyze with AI</button> -->
+<button id="resumeAnalyze" onclick="resumeAnalyze()">Analyze with AI</button>
+<!-- </form> -->
+
+<div id="responseBox"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
